@@ -63,6 +63,11 @@ namespace CE.iPhone.PList {
         public Byte TypeCode { get { return 0; } }
 
         /// <summary>
+        /// Returns the null, the CLR equivalent of this value.
+        /// </summary>
+        public object Value { get { return null; } }
+
+        /// <summary>
         /// Gets a value indicating whether this instance is written only once in binary mode.
         /// </summary>
         /// <value>

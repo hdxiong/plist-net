@@ -71,6 +71,11 @@ namespace CE.iPhone.PList.Internal {
         /// <value>The value of this element.</value>
         public abstract T Value { get; set; }
 
+        object IPListElement.Value
+        {
+            get { return Value; }
+        }
+
         /// <summary>
         /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
         /// you should return null (Nothing in Visual Basic) from this method, and instead, if specifying a 

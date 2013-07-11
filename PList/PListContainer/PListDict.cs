@@ -35,6 +35,7 @@
  * =================================================================================
  */
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -64,6 +65,22 @@ namespace CE.iPhone.PList {
         /// </summary>
         /// <value>The binary typecode of this element.</value>
         public Byte TypeCode { get { return 0x0D; } }
+
+        /// <summary>
+        /// Gets this dictionary element with all the values
+        /// mapped to their CLR equivalents.
+        /// </summary>
+        public IDictionary<string, object> Value
+        {
+            get
+            {
+                return this
+                    .Select(kv => new { k = kv.Key, v = kv.Value.Value })
+                    .ToDictionary(kv => kv.k, kv => kv.v);
+            }
+        }
+
+        object IPListElement.Value { get { return Value; } }
 
         /// <summary>
         /// Gets a value indicating whether this instance is written only once in binary mode.

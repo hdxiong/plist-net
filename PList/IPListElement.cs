@@ -57,6 +57,11 @@ namespace CE.iPhone.PList {
         Byte TypeCode { get; }
 
         /// <summary>
+        /// Gets the CLR value of this element.
+        /// </summary>
+        object Value { get; }
+
+        /// <summary>
         /// Gets the length of this PList element.
         /// </summary>
         /// <returns>The length of this PList element.</returns>

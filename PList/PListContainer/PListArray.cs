@@ -38,6 +38,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Xml;
 using System.Xml.Schema;
@@ -62,6 +63,17 @@ namespace CE.iPhone.PList {
         /// </summary>
         /// <value>The binary typecode of this element.</value>
         public Byte TypeCode { get { return 0x0A; } }
+
+        /// <summary>
+        /// Gets this element's CLR array representation with
+        /// all elements mapped to their CLR equivalents.
+        /// </summary>
+        public IEnumerable<object> Value
+        {
+            get { return this.Select(e => e.Value); }
+        }
+
+        object IPListElement.Value { get { return Value; } }
 
         /// <summary>
         /// Gets a value indicating whether this instance is written only once in binary mode.
