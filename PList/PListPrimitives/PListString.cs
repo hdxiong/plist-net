@@ -73,7 +73,7 @@ namespace CE.iPhone.PList {
         /// Gets the Xml tag of this element.
         /// </summary>
         /// <value>The Xml tag of this element.</value>
-        public override String Tag { get { return m_IsUTF16 ? "ustring" : "string"; } }
+        public override String Tag { get { return "string"; } }
 
         /// <summary>
         /// Gets the binary typecode of this element.
