@@ -146,7 +146,8 @@ namespace CE.iPhone.PList.Internal {
             Int32 tempElementLength = CurrentElementLength;
 
             CurrentElementTypeCode = typeCode;
-            CurrentElementLength = objLen;
+            //CurrentElementLength = objLen;
+            CurrentElementLength = Math.Abs(objLen);
 
             elem.ReadBinary(this);
 
